@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASESMEN SD 2 ADI JAYA</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container">
+        <div class="header">
+            <div class="question-number">SOAL NOMOR 1</div>
+            <div class="info-box">
+                <span id="timer">SISA WAKTU : 90:00</span>
+            </div>
+            <button id="showQuestionList" class="nav-button">DAFTAR SOAL</button>
+        </div>
+        <div class="quiz-container">
+            <div class="question-panel">
+                <h2 class="question-text"></h2>
+                <div class="question-image-container">
+                    <img id="questionImage" src="" alt="Gambar Soal" style="display: none; max-width: 80%; height: auto; margin-top: 15px; border-radius: 8px;">
+                </div>
+                </div>
+            <div class="answer-panel">
+                <h3>PILIHAN JAWABAN</h3>
+                <button class="answer-button"><span>A.</span></button>
+                <button class="answer-button"><span>B.</span></button>
+                <button class="answer-button"><span>C.</span></button>
+                <button class="answer-button"><span>D.</span></button>
+            </div>
+        </div>
+        <div class="navigation-buttons">
+            <button class="nav-button nav-button-prev" style="display: none;">SOAL SEBELUMNYA</button>
+            <button class="nav-button nav-button-next">SOAL SELANJUTNYA</button>
+        </div>
+    </div>
+
+    <div id="questionListModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Daftar Soal</h2>
+            <div id="questionListGrid"></div>
+        </div>
+    </div>
+
+    <div id="warningModal" class="modal">
+        <div class="warning-content">
+            <h2 class="warning-title">PERINGATAN</h2>
+            <div id="warningMessage"></div>
+            <div id="unansweredList"></div>
+            <button id="returnToQuizBtn" class="nav-button">KEMBALI KE SOAL</button>
+        </div>
+    </div>
+</body>
+</html>

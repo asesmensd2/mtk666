@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB SDN 2 ADIJAYA</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        /* Gaya CSS yang digabungkan dari style.css dan penyesuaian lebar */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .welcome-page {
+            width: 100%;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            /* Perubahan utama: Lebar 800px dan pemusatan */
+            max-width: 800px;
+            width: 100%; /* Memastikan responsif di bawah 800px */
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #007bff;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        #namaLengkap {
+            width: 80%;
+            padding: 10px 15px;
+            margin-bottom: 30px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box; /* Penting agar padding tidak menambah lebar */
+        }
+
+        .button-primary {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-primary:hover {
+            background-color: #218838;
+        }
+
+        /* Gaya logo agar responsif (pertahankan tinggi 100px) */
+        .container > div > img {
+            max-width: 100%;
+            height: 100px;
+            object-fit: contain;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="welcome-page">
+        <div class="container">
+            <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
+                <img src="logo-tut-wuri-handayani.png" alt="Logo Tut Wuri Handayani" style="height: 100px;">
+                <img src="logosd2.jpg" alt="Logo Sekolah" style="height: 100px;">
+                <img src="logo-kurikulum-merdeka.png" alt="Logo Kurikulum Merdeka" style="height: 100px;">
+            </div>
+            <h1>SELAMAT DATANG PESERTA ASESMEN SEMESTER PERTAMA KELAS VI TAHUN AJARAN 2025/2026</h1>
+            <p><h2>MAPEL : MATEMATIKA</h2></p>
+            <p>Silakan Isikan Nama Lengkap Pada Kolom Di Bawah Ini.</p>
+            <input type="text" id="namaLengkap" placeholder="Nama Lengkap">
+            <a href="#" id="startButton" class="button-primary">MULAI</a>
+        </div>
+    </div>
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

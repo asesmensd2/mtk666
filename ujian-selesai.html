@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Asesmen Siswa</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 15px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .profile {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background: white;
+            gap: 15px;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .avatar {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .name {
+            font-weight: 600;
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .class {
+            color: #666;
+            margin: 4px 0 0;
+            font-size: 14px;
+        }
+
+        .meta {
+            color: #888;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .score-card {
+            flex: 1;
+            min-width: 280px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+        }
+
+        .ribbon {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 50px;
+            height: auto;
+        }
+
+        .total-score {
+            font-size: 56px;
+            font-weight: bold;
+            margin: 15px 0 10px;
+        }
+
+        .grade {
+            font-size: 32px;
+            margin: 10px 0;
+        }
+
+        .kkm {
+            margin-top: 25px;
+            font-size: 15px;
+        }
+
+        .status {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        .status.tidak-lulus {
+            background: #dc3545;
+        }
+
+        .details {
+            flex: 2;
+            min-width: 300px;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+
+        .details h3 {
+            margin: 0 0 20px 0;
+            color: #333;
+            font-size: 19px;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px dashed #ddd;
+            gap: 10px;
+        }
+
+        .detail-item:last-child { border-bottom: none; }
+
+        .label { color: #555; font-weight: 500; }
+        .value { font-weight: 600; color: #333; text-align: right; }
+        .correct { color: #28a745; }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            .content { flex-direction: column; padding: 15px; }
+            .score-card, .details { min-width: 100%; }
+            .total-score { font-size: 48px; }
+            .grade { font-size: 28px; }
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 10px; }
+            .header h1 { font-size: 20px; }
+            .profile { flex-direction: column; text-align: center; }
+            .profile-info { justify-content: center; }
+            .avatar { width: 50px; height: 50px; font-size: 20px; }
+            .name { font-size: 17px; }
+            .total-score { font-size: 42px; }
+            .grade { font-size: 26px; }
+            .score-card { padding: 25px 20px; }
+            .ribbon { width: 40px; top: 12px; left: 12px; }
+            .details { padding: 20px; }
+            .detail-item { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Hasil Asesmen Siswa</h1>
+    </div>
+
+    <div class="profile">
+        <div class="profile-info">
+            <div class="avatar" id="avatar">-</div>
+            <div>
+                <p class="name" id="namaSiswa">-</p>
+                <p class="class">Kelas VI • MATEMATIKA</p>
+            </div>
+        </div>
+        <div class="meta" id="metaInfo">Tanggal: -  Waktu: - menit</div>
+    </div>
+
+    <div class="content">
+        <div class="score-card">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/medal.png" class="ribbon" alt="medal">
+            <div class="total-score" id="nilaiAkhir">0</div>
+            <div class="grade" id="gradeText">Grade -</div>
+            <div class="kkm">KKM <strong>40</strong></div>
+            <div class="status" id="statusText">Lulus</div>
+        </div>
+
+        <div class="details">
+            <h3>Rincian Hasil Asesmen</h3>
+            
+            <div class="detail-item">
+                <span class="label">Pilihan Ganda</span>
+                <span class="value">
+                    Jawaban Benar <strong class="correct" id="benarCount">0</strong>  Jawaban Salah <strong id="salahCount">0</strong>
+                </span>
+            </div>
+
+            <div class="detail-item">
+                <span class="label">Total Soal</span>
+                <span class="value" id="totalSoal">0</span>
+            </div>
+
+            <div class="detail-item">
+                <span class="label">Nilai Akhir</span>
+                <span class="value" style="font-size:22px;color:#667eea;"><strong id="nilaiAkhir2">0</strong></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Ambil data dari localStorage
+    const namaPeserta = localStorage.getItem('namaPeserta') || 'Nama Tidak Diketahui';
+    const nilaiPeserta = parseInt(localStorage.getItem('nilaiPeserta')) || 0;
+    const jawabanBenar = parseInt(localStorage.getItem('jawabanBenar')) || 0;
+    const jawabanSalah = parseInt(localStorage.getItem('jawabanSalah')) || 0;
+    const totalSoal = jawabanBenar + jawabanSalah;
+
+    // Tanggal & Waktu sekarang
+    const sekarang = new Date();
+    const tgl = sekarang.toLocaleDateString('id-ID');
+    const waktuSelesai = sekarang.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+
+    // Grade berdasarkan nilai
+    let grade = '';
+    if (nilaiPeserta >= 80) grade = 'A (Sangat Baik)';
+    else if (nilaiPeserta >= 70) grade = 'B (Baik)';
+    else if (nilaiPeserta >= 60) grade = 'C (Cukup)';
+    else grade = 'D (Kurang)';
+
+    const lulus = nilaiPeserta >= 40;
+
+    // Update DOM
+    document.getElementById('avatar').textContent = namaPeserta.charAt(0).toUpperCase();
+    document.getElementById('namaSiswa').textContent = namaPeserta;
+    document.getElementById('metaInfo').innerHTML = `Tanggal ${tgl}  Selesai pukul ${waktuSelesai}`;
+
+    document.getElementById('nilaiAkhir').textContent = nilaiPeserta;
+    document.getElementById('nilaiAkhir2').textContent = nilaiPeserta;
+    document.getElementById('gradeText').textContent = grade;
+    document.getElementById('statusText').textContent = lulus ? 'Lulus' : 'Tidak Lulus';
+    if (!lulus) document.getElementById('statusText').classList.add('tidak-lulus');
+
+    document.getElementById('benarCount').textContent = jawabanBenar;
+    document.getElementById('salahCount').textContent = jawabanSalah;
+    document.getElementById('totalSoal').textContent = totalSoal;
+</script>
+
+</body>
+</html>
