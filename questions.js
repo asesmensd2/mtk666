@@ -16,7 +16,7 @@ const questions = [
     jawabanBenar: "10/3"
   },
   {
-    soal: "Hasil dari ½ × ³/₂ = …",
+    soal: "Hasil dari 1/2 × 3/2 = …",
     pilihan: ["3/4", "3/8", "4/8", "1/6"],
     jawabanBenar: "3/4"
   },
@@ -53,27 +53,27 @@ const questions = [
 
   // Soal 11–20 (diperbaiki sesuai foto terbaru yang jelas)
   {
-    soal: "Hitunglah hasil perkalian dan pembagian berikut: ³/₅ × 10 = …",
+    soal: "Hitunglah hasil perkalian dan pembagian berikut: 3/5 × 10 = …",
     pilihan: ["3", "6", "50/3", "30/5"],
     jawabanBenar: "6"
   },
   {
-    soal: "Hitunglah hasil perkalian dan pembagian berikut: 7 × ²/₅ = …",
+    soal: "Hitunglah hasil perkalian dan pembagian berikut: 7 × 2/5 = …",
     pilihan: ["14/5", "7/5", "2/5", "9/5"],
     jawabanBenar: "14/5"
   },
   {
-    soal: "Hitunglah hasil perkalian dan pembagian berikut: ³/₄ × ²/₃ = …",
+    soal: "Hitunglah hasil perkalian dan pembagian berikut: 3/4 × 2/3 = …",
     pilihan: ["6/12", "5/7", "6/20", "1/2"],
     jawabanBenar: "6/12"
   },
   {
-    soal: "Hitunglah hasil perkalian dan pembagian berikut: ¹/₅ ÷ ²/₃ = …",
+    soal: "Hitunglah hasil perkalian dan pembagian berikut: 1/5 ÷ 2/5 = …",
     pilihan: ["2/15", "3/10", "1/15", "3/5"],
     jawabanBenar: "3/10"
   },
   {
-    soal: "Hitunglah hasil perkalian dan pembagian berikut: 3 ÷ ³/₂ = …",
+    soal: "Hitunglah hasil perkalian dan pembagian berikut: 3 ÷ 3/2 = …",
     pilihan: ["2", "9/2", "6/3", "3/2"],
     jawabanBenar: "2"
   },
@@ -88,7 +88,7 @@ const questions = [
     jawabanBenar: "Budi, Deni, Ani, Citra"
   },
   {
-    soal: "Nilai (Ani 7,5 – Budi 7,2 – Citra 7,8 – Deni 7,4). Nilai terkecil ulangan diperoleh oleh …",
+    soal: "Nilai : Ani 7,5 – Budi 7,2 – Citra 7,8 – Deni 7,4. Nilai terkecil ulangan diperoleh oleh …",
     pilihan: ["Ani", "Budi", "Citra", "Deni"],
     jawabanBenar: "Budi"
   },
@@ -152,4 +152,5 @@ const questions = [
     pilihan: ["20 menit", "25 menit", "27 menit", "30 menit"],
     jawabanBenar: "25 menit"
   }
+
 ];
