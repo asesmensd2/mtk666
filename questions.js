@@ -36,7 +36,7 @@ const questions = [
     jawabanBenar: "9"
   },
   {
-    soal: "Ibu membeli buah 20 kg (jeruk dan apel) dengan rasio 1 : 4. Berapa kg jeruk yang dibeli?",
+    soal: "Ibu membeli buah 20 kg (jeruk dan apel) dengan rasio 1 : 4.  kg jeruk yang dibeli?",
     pilihan: ["4 Kg", "5 Kg", "10 Kg", "15 Kg"],
     jawabanBenar: "4 Kg"
   },
@@ -93,7 +93,7 @@ const questions = [
     jawabanBenar: "Budi"
   },
   {
-    soal: "Berapakah nilai terbesar pada tabel di atas?",
+    soal: "Berapakah nilai terbesar dari data Nilai : Ani 7,5 – Budi 7,2 – Citra 7,8 – Deni 7,4.",
     pilihan: ["7,2", "7,4", "7,5", "7,8"],
     jawabanBenar: "7,8"
   },
@@ -152,5 +152,6 @@ const questions = [
     pilihan: ["20 menit", "25 menit", "27 menit", "30 menit"],
     jawabanBenar: "25 menit"
   }
+
 
 ];
